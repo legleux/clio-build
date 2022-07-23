@@ -30,8 +30,9 @@ RUN ./install_compilers.sh gcc
 
 # check if this even does anything
 RUN apt-get clean
-COPY build_clio.sh .
-CMD ["./build_clio.sh"]
+COPY build_clio.sh /build_clio.sh
+RUN chmod +x /build_clio.sh
+ENTRYPOINT ["/build_clio.sh"]
 # ARG BUILD=0
 # RUN if [ $BUILD ]; then git clone https://github.com/xrplf/clio.git && cd clio && cmake -B build && cmake --build build --parallel $(nproc)
 
