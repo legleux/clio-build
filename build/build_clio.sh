@@ -17,4 +17,4 @@ ls -lh /github/workspace/clio_ci/build
 echo "ls -lh /github/workspace/clio_ci/build/clio-prefix/src/clio-build"
 ls -lh /github/workspace/clio_ci/build/clio-prefix/src/clio-build/
 
-cp /github/workspace/clio_ci/build/clio-prefix/src/clio-build/clio_tests .
+cp ./clio_ci/build/clio-prefix/src/clio-build/clio_tests .
