@@ -4,7 +4,7 @@ export SRC_DIR=$(realpath clio_src)
 echo "[${SRC_DIR}] passed to Clio repo as SRC_DIR"
 
 cmake -S clio_ci -B clio_ci/build -DSRC_DIR=$SRC_DIR
-cmake --build clio_ci/build --parallel $(nproc) >> /clio_build.log 2>&1
+cmake --build clio_ci/build --parallel $(nproc) | tee -a clio_build.log
 
 ls -lh .
 
