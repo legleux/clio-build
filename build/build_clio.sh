@@ -11,10 +11,10 @@ ls -lh .
 echo "ls -lh clio_ci/build"
 ls -lh clio_ci/build
 
-echo "ls -lh /github/workspace/clio_ci/build"
-ls -lh /github/workspace/clio_ci/build
+echo "ls -lh ./clio_ci/build"
+ls -lh ./clio_ci/build
 
-echo "ls -lh /github/workspace/clio_ci/build/clio-prefix/src/clio-build"
-ls -lh /github/workspace/clio_ci/build/clio-prefix/src/clio-build/
+echo "ls -lh ./clio_ci/build/clio-prefix/src/clio-build"
+ls -lh ./clio_ci/build/clio-prefix/src/clio-build/
 
 cp ./clio_ci/build/clio-prefix/src/clio-build/clio_tests .
