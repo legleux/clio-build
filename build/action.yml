@@ -11,8 +11,10 @@ runs:
         echo "[${CLIO_ROOT}] passed to Clio repo as CLIO_ROOT"
 
         if [ ${{ matrix.type.suffix }} == "rpm" ]; then
-            echo "building rpm"
-            gen='rpm'
+          gen='RPM'
+          source /opt/rh/devtoolset-11/enable
+        else
+          gen='DEB'
         fi
         cmake -S clio_ci -B clio_ci/build -Dpkg=${gen} -DCLIO_ROOT=$CLIO_ROOT
         cmake --build clio_ci/build --parallel $(nproc) | tee -a clio_build.log
