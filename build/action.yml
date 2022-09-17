@@ -1,6 +1,10 @@
 name: 'build clio'
 description: 'Build clio'
-
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: "composite"
+
+  steps:
+    - name: Build
+      shell: bash
+      run: |
+        build_clio.sh ${{matrix.type.suffix}}
