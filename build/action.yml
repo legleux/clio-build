@@ -7,18 +7,11 @@ runs:
     - name: Build
       shell: bash
       run: |
-        ls -l
         export CLIO_ROOT=$(realpath clio_src)
         echo "[${CLIO_ROOT}] passed to Clio repo as CLIO_ROOT"
 
         if [ ${{ matrix.type.suffix }} == "rpm" ]; then
-          # gen='RPM'
           source /opt/rh/devtoolset-11/enable
-          yum install -y rpmdevtools rpmlint
-          ln -s /opt/cmake-3.16.3-Linux-x86_64/bin/cpack /usr/local/bin/cpack
-        else
-          # gen='DEB'
-          :
         fi
         echo "gen: ${gen}"
         cmake -S clio_ci -B clio_ci/build -DCLIO_ROOT=$CLIO_ROOT
