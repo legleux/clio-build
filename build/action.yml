@@ -14,7 +14,7 @@ runs:
             echo "building rpm"
             gen='rpm'
         fi
-        cmake -S clio_ci -B clio_ci/build -D ${gen} -DCLIO_ROOT=$CLIO_ROOT
+        cmake -S clio_ci -B clio_ci/build -Dpkg=${gen} -DCLIO_ROOT=$CLIO_ROOT
         cmake --build clio_ci/build --parallel $(nproc) | tee -a clio_build.log
         cp /*.log . # get the boost build logs
         cp ./clio_ci/build/clio-prefix/src/clio-build/clio_tests .
