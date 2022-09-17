@@ -7,4 +7,7 @@ runs:
     - name: Build
       shell: bash
       run: |
-        build_clio.sh ${{matrix.type.suffix}}
+        ls .
+        find . -name build_clio.sh
+        find ${{github.workspace}} -name build_clio.sh
+        ./build_clio.sh ${{matrix.type.suffix}}
