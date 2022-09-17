@@ -10,7 +10,7 @@ runs:
         export CLIO_ROOT=$(realpath clio_src)
         echo "[${CLIO_ROOT}] passed to Clio repo as CLIO_ROOT"
 
-        if [ ${{ matrix.type.suffix }} == "rpm" ]:
+        if [ ${{ matrix.type.suffix }} == "rpm" ]; then
             echo "building rpm"
             gen='rpm'
         fi
