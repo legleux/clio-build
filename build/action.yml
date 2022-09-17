@@ -7,4 +7,4 @@ runs:
     - name: Build
       shell: bash
       run: |
-        ./build_clio.sh ${{matrix.type.suffix}}
+        ./gha/build/build_clio.sh ${{matrix.type.suffix}}
