@@ -18,7 +18,7 @@ runs:
         else
           gen='DEB'
         fi
-
+        echo "gen: ${gen}"
         cmake -S clio_ci -B clio_ci/build -Dpkg=${gen} -DCLIO_ROOT=$CLIO_ROOT
         cmake --build clio_ci/build --parallel $(nproc) | tee -a clio_build.log
         cp /*.log . # get the boost build logs
